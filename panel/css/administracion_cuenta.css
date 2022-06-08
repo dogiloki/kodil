@@ -1,0 +1,14 @@
+.content-administrar{
+	display: flex;
+	background: #fff;
+	color: #353535;
+	margin: 40px;
+}
+th,td{
+	padding: 10px;
+}
+td img{
+	display: inline-flex;
+	cursor: pointer;
+	padding: 3px;
+}

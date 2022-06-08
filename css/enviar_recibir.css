@@ -1,0 +1,88 @@
+.content{
+	width: 100%;
+	display: inline-flex;
+	justify-content: center;
+	color: #353535;
+}
+.content .menu{
+	width: 100%;
+	display: inline-flex;
+	margin-bottom: 30px;
+}
+.content .option{
+	width: 95%;
+	background: #fff;
+	padding: 20px;
+	margin: 30px 1px 30px 1px;
+	display: inline-block;
+	-webkit-box-shadow: 3px 3px 10px 0px #666;
+	-moz-box-shadow: 3px 3px 10px 0px #666;
+	box-shadow: 3px 3px 10px 0px #666;
+}
+.content .texto{
+	width: 100%;
+	font-size: 18px;
+	color: #666;
+	text-align: center;
+	cursor: pointer;
+	padding-bottom: 7px;
+	box-shadow: 0px 1px #666;
+}
+.content .actualizar{
+	font-size: 25px;
+}
+.title-formu{
+	font-size: 30px;
+	text-align: center;
+	margin-bottom: 5px;
+}
+.content-datos{
+	display: flex;
+	justify-content: center;
+}
+
+/* Formulario */
+.content-formu{
+	margin: 10px 0px 40px 0px;
+	padding: 40px;
+	border: 1px solid #c2c2c2;
+}
+.content-caja,.content-btn{
+	margin: 10px 0px 10px 0px;
+	width: 100%;
+}
+.caja-formu{
+	padding: 5px;
+	border: 1px solid #c2c2c2;
+	border-radius: 5px;
+	margin-top: 5px;
+	font-size: 17px;
+	display: flex;
+	color: #666;
+	width: 100%;
+}
+.texto-formu{
+	font-size: 22px;
+}
+.caja-formu:focus{
+	border: 1px solid #308c3b;
+}
+.btn-formu{
+	padding: 5px 10px 5px 10px;
+	border: 1px solid #308c3b;
+	background: none;
+	color: #308c3b;
+	cursor: pointer;
+	font-size: 16px;
+	width: auto;
+}
+.aviso{
+	font-size: 18px;
+	color: red;
+	margin-top: 5px;
+}
+
+/* Modal */
+.qr{
+	cursor: pointer;
+}

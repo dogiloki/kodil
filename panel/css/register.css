@@ -1,0 +1,54 @@
+.content-register{
+	display: flex;
+	background: #fff;
+	color: #353535;
+	margin: 40px;
+}
+.register{
+	width: 100%;
+	margin: 10px;
+	display: flex;
+	padding: 10px;
+}
+.content-register .title{
+	font-size: 30px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.content-caja{
+	padding: 5px;
+	margin-right: 20px;
+}
+.texto{
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+.caja{
+	font-size: 14px;
+	padding: 5px;
+	color: #353535;
+	border-radius: 5px;
+	border: 1px solid #c2c2c2;
+	background: #f5f5f5;
+	width: 100%;
+}
+.caja:focus{
+	border: 1px solid #308c3b;
+}
+#admin{
+	margin-right: 7px;
+}
+.aviso{
+	color: red;
+	font-size: 17px;
+	margin-bottom: 10px;
+}
+.btn{
+	width: 100%;
+	padding: 10px;
+	background: #308c3b;
+	color: #f5f5f5;
+	cursor: pointer;
+	border: 1px solid #c2c2c2;
+	font-size: 16px;
+}

@@ -1,0 +1,72 @@
+.content{
+	width: 100%;
+	display: inline-flex;
+	justify-content: center;
+	color: #353535;
+}
+.content .option{
+	width: 95%;
+	background: #fff;
+	padding: 20px;
+	margin: 30px 1px 30px 1px;
+	display: inline-block;
+	-webkit-box-shadow: 3px 3px 10px 0px #666;
+	-moz-box-shadow: 3px 3px 10px 0px #666;
+	box-shadow: 3px 3px 10px 0px #666;
+	cursor: default;
+}
+.content .menu{
+	width: 100%;
+	display: inline-flex;
+	margin-bottom: 30px;
+}
+.content .texto{
+	width: 100%;
+	font-size: 18px;
+	color: #666;
+	text-align: center;
+	cursor: pointer;
+	padding-bottom: 7px;
+	box-shadow: 0px 1px #666;
+}
+.content .actualizar{
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+
+/* Información */
+.content .content-info-info{
+	padding: 10px 0px 10px 0px;
+	box-shadow: 0px 1px #c2c2c2;
+}
+.content-info-info .title-info{
+	font-size: 18px;
+}
+.content-info-info .info{
+	font-size: 16px;
+	margin-top: 1px;
+}
+
+/* Movimientos */
+.content .content-info-movi{
+	padding: 10px 0px 10px 0px;
+	box-shadow: 0px 1px #c2c2c2;
+}
+.content-info-movi .title-movi{
+	font-size: 18px;
+}
+.content-info-movi .movi{
+	font-size: 16px;
+	margin-top: 1px;
+}
+.info_movi{
+	margin: 10px;
+}
+.mover-movi{
+	transition: 0.5s all ease;
+}
+.info_movi .text-movi{
+	display: block;
+	font: 14px;
+	padding: 3px;
+}

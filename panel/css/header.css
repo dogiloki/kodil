@@ -1,0 +1,145 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	font-family: arial;
+}
+body{
+	background: #ebebeb;
+}
+header{
+	background: #308c3b;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	height: 40px;
+}
+header .logo{
+	cursor: pointer;
+}
+.banner{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	z-index: -1;
+}
+
+/* Navegador Principal */
+header .header{
+	width: 100%;
+	display: inline-flex;
+	justify-content: right;
+	margin-right: 30px;
+}
+.header li{
+	list-style: none;
+	padding: 5px 10px 5px 10px;
+	margin: 0px 20px 0px 20px;
+	cursor: pointer;
+	color: #f5f5f5;
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+}
+.header li:hover{
+	opacity: 0.8;
+}
+header .icon{
+	margin-right: 5px;
+}
+
+/* Menu */
+header .menu{
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	background: none;
+	left: 0px; top: 0px;
+	z-index: 100;
+}
+header .content-menu{
+	position: fixed;
+	right: 200px; top: 60px;
+	min-width: 200px;
+	max-width: 250px;
+	padding: 10px;
+	border-radius: 0px 0px 5px 5px;
+	background: #f5f5f5;
+	display: block;
+	color: #353535;
+	animation: 0.3s mover_menu ease;
+	-webkit-animation: 0.3s mover_menu ease;
+	-moz-animation: 0.3s mover_menu ease;
+	-webkit-box-shadow: 3px 3px 10px 0px #666;
+	-moz-box-shadow: 3px 3px 10px 0px #666;
+	box-shadow: 3px 3px 10px 0px #666;
+}
+header .content-img{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+header .content-img img{
+	border-radius: 100%;
+}
+header .content-name{
+	text-align: center;
+	font-size: 18px;
+	margin-top: 10px;
+}
+header .content-email{
+	text-align: center;
+	font-size: 14px;
+}
+header .content-menu nav{
+	margin-top: 10px;
+}
+header .content-menu li{
+	padding: 3px 5px 3px 5px;
+	list-style: none;
+	font-size: 17px;
+	cursor: pointer;
+}
+header .content-menu li:hover{
+	background: #dddee3;
+}
+@keyframes mover_menu{
+	from{
+		transform: translateY(-100%);
+	}
+	to{
+		transform: translateY(0%);
+	}
+}
+
+/* Inicio */
+.content{
+	width: 100%;
+	display: inline-flex;
+	justify-content: space-around;
+	color: #353535;
+}
+.content .option{
+	max-width: 200px;
+	height: auto;
+	background: #ffF;
+	margin: 10vw 50px 10vw 50px;
+	padding: 20px;
+	cursor: pointer;
+	transition: 0.1s all ease;
+	-webkit-box-shadow: 3px 3px 10px 0px #666;
+	-moz-box-shadow: 3px 3px 10px 0px #666;
+	box-shadow: 3px 3px 10px 0px #666;
+}
+.content .option:hover{
+	transform: scale(1.1);
+	border: 1px solid #308c3b;
+}
+.content .content-img{
+	width: 200px;
+	height: 200px;
+}
+.content .texto{
+	font-size: 18px;
+	text-align: center;
+}
