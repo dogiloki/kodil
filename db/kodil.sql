@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 14-05-2020 a las 19:50:13
--- Versión del servidor: 10.4.10-MariaDB
--- Versión de PHP: 7.4.0
+-- Tiempo de generación: 09-06-2022 a las 02:39:48
+-- Versión del servidor: 5.7.31
+-- Versión de PHP: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -27,7 +26,7 @@ DELIMITER $$
 -- Procedimientos
 --
 DROP PROCEDURE IF EXISTS `delete_all`$$
-CREATE PROCEDURE `delete_all` ()  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_all` ()  BEGIN
 DELETE FROM users;
 DELETE FROM codes_qr;
 DELETE FROM debito;
@@ -36,7 +35,7 @@ DELETE FROM finanzas;
 END$$
 
 DROP PROCEDURE IF EXISTS `eliminar`$$
-CREATE PROCEDURE `eliminar` (IN `id` VARCHAR(50), IN `account` VARCHAR(50))  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `eliminar` (IN `id` VARCHAR(50), IN `account` VARCHAR(50))  BEGIN
 DELETE FROM codes_qr WHERE codes_qr.desde=account OR codes_qr.para=account;
 DELETE FROM credito WHERE credito.account=account;
 DELETE FROM debito WHERE debito.account=account;
@@ -47,7 +46,7 @@ DELETE FROM users WHERE users.id=id;
 END$$
 
 DROP PROCEDURE IF EXISTS `enviar`$$
-CREATE PROCEDURE `enviar` (IN `id` VARCHAR(50), IN `cuenta_desde` VARCHAR(50), IN `cuenta_para` VARCHAR(50), IN `cantidad` FLOAT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `enviar` (IN `id` VARCHAR(50), IN `cuenta_desde` VARCHAR(50), IN `cuenta_para` VARCHAR(50), IN `cantidad` FLOAT)  BEGIN
 UPDATE users SET users.saldo=users.saldo-cantidad WHERE users.account=cuenta_desde;
 UPDATE users SET users.saldo=users.saldo+cantidad WHERE users.account=cuenta_para;
 UPDATE codes_qr SET codes_qr.active='0', codes_qr.date_cobro=now() WHERE codes_qr.id=id;
@@ -32299,8 +32298,8 @@ CREATE TABLE IF NOT EXISTS `finanzas` (
 --
 
 INSERT INTO `finanzas` (`id`, `account`, `ingresos`, `gastos`) VALUES
-('e53rf', '8100 6736 2395 13', 1500, 101439),
-('5eb4cf5e36ab0', '8163 0718 4034 28', 51500, 42037);
+('e53rf', '8100 6736 2395 13', 11400, 104817),
+('5eb4cf5e36ab0', '8163 0718 4034 28', 51500, 57826);
 
 -- --------------------------------------------------------
 
@@ -32366,7 +32365,13 @@ INSERT INTO `movimientos` (`id`, `desde`, `para`, `realizado`, `tipo_operacion`,
 ('5ebda41dcd127', '8100 6736 2395 13', 'Genesis Of Videogames (gov)', 'debito', 'Pago en tienda virtual GOV', 1200, '2020-05-14 15:03:41'),
 ('5ebda4bd7a185', '8100 6736 2395 13', 'Genesis Of Videogames (gov)', 'debito', 'Pago en tienda virtual GOV', 1200, '2020-05-14 15:06:21'),
 ('5ebda5303ca1d', '8100 6736 2395 13', 'Genesis Of Videogames (gov)', 'debito', 'Pago en tienda virtual GOV', 1200, '2020-05-14 15:08:16'),
-('5ebda56a343fa', '8100 6736 2395 13', 'Genesis Of Videogames (gov)', 'debito', 'Pago en tienda virtual GOV', 1200, '2020-05-14 15:09:14');
+('5ebda56a343fa', '8100 6736 2395 13', 'Genesis Of Videogames (gov)', 'debito', 'Pago en tienda virtual GOV', 1200, '2020-05-14 15:09:14'),
+('6116a6d5d5867', '8100 6736 2395 13', 'Genesis Of Videogames (gov)', 'debito', 'Pago en tienda virtual GOV', 1678, '2021-08-13 12:07:33'),
+('6116a735be976', '8100 6736 2395 13', 'Genesis Of Videogames (gov)', 'debito', 'Pago en tienda virtual GOV', 1200, '2021-08-13 12:09:09'),
+('61548de318c83', '8100 6736 2395 13', 'Genesis Of Videogames (gov)', 'debito', 'Pago en tienda virtual GOV', 500, '2021-09-29 11:01:39'),
+('6228f6ac2ca77', '8163 0718 4034 28', 'Genesis Of Videogames (gov)', 'debito', 'Pago en tienda virtual GOV', 5889, '2022-03-09 12:49:16'),
+('62a15be4a98d9', '', '', 'debito', 'Pago en tienda virtual GOV', 9900, '2022-06-08 21:33:08'),
+('62a15ca6b53ac', '8163 0718 4034 28', '8100 6736 2395 13', 'debito', 'Pago en tienda virtual GOV', 9900, '2022-06-08 21:36:22');
 
 -- --------------------------------------------------------
 
@@ -32400,8 +32405,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `surname`, `email`, `birth`, `phone`, `sexo`, `user`, `password`, `img`, `account`, `tarjeta_credito`, `tarjeta_debito`, `saldo`, `register`, `active`, `admin`) VALUES
-('5e915a896487b', 'ADMIN', 'DE KODIL', 'admin@gmail.com', '2000-12-08', '5615147879', 'Hombre', 'admin', '$2y$10$9AypXjmkzMQdNeGbp4S71ee50cA.wSzzoUSOgNvDdmDBz5XVBAk/u', 'img/hombre.png', '8100 6736 2395 13', '0', '1', 9000, '2020-04-11 00:50:01', '1', '1'),
-('5eb4cf5e36555', 'Julio', 'Villanueva', 'dogiloki2002@gmail.com', '2000-08-19', '5615147879', 'Hombre', 'dogiloki', '$2y$10$ZnSwXhPw4CNxLiVBMV2mQO6ZYlbqxRaFnZhE2vHutgsLK6ePUFXea', 'img/hombre.png', '8163 0718 4034 28', '0', '1', 9463, '2020-05-07 22:17:50', '1', '0');
+('5e915a896487b', 'ADMIN', 'DE KODIL', 'admin@gmail.com', '2000-12-08', '5615147879', 'Hombre', 'admin', '$2y$10$4qnARmqNvmIE3XJVf4fnt.BekamryLL.rXJp0JdsmzcFavdLKHhIy', 'img/hombre.png', '8100 6736 2395 13', '0', '1', 15522, '2020-04-11 00:50:01', '1', '1'),
+('5eb4cf5e36555', 'Julio', 'Villanueva', 'dogiloki@gmail.com', '2000-08-19', '5615147879', 'Hombre', 'dogiloki', '$2y$10$ZnSwXhPw4CNxLiVBMV2mQO6ZYlbqxRaFnZhE2vHutgsLK6ePUFXea', 'img/hombre.png', '8163 0718 4034 28', '0', '1', 40100, '2020-05-07 22:17:50', '1', '0');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

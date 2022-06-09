@@ -17,7 +17,7 @@ include("conexion.php");
 session_start();
 if(!isset($_SESSION['kodil']['id'])){
 	$version="";
-	$fp=fopen("apk/version.txt", "r");
+	$fp=fopen("apk/version.txt","r");
 	while(!feof($fp)){
     	$version=fgets($fp);
 	}
