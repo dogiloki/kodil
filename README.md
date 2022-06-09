@@ -1,8 +1,8 @@
 # kodil
-BASE DE DATOS
-esta en la carpeta db
-se llama: kodil
+<b>BASE DE DATOS</b><br>
+en la carpeta db<br>
+nombre: kodil
 
-//Para adminsitrador
-usuario: admin
+<b>Para adminsitrador</b><br>
+usuario: admin<br>
 contraseña: Admin123
