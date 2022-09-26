@@ -1,4 +1,4 @@
-# kodil (Alpha)
+# kodil (Alpha) PROYECTO INICIADO EN MARZO 2020
 <b>BASE DE DATOS</b><br>
 en la carpeta db<br>
 nombre: kodil
